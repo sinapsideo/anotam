@@ -50,9 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_
                         unset($_SESSION["login_error"]);
                         unset($_SESSION["profile_login_error"]);
 
-                        // ***** MUDANÇA PRINCIPAL AQUI *****
-                        // Redireciona para a URL do perfil do usuário (anotamed.com/username)
-                        header("location: /" . urlencode($username_db));
+                        // Redireciona para o dashboard principal após o login bem-sucedido.
+                        header("location: dashboard.php");
                         exit;
                     } else{
                         $error_message = "Senha inválida para o usuário \"".htmlspecialchars($username)."\".";
